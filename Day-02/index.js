@@ -28,13 +28,13 @@ fs.appendFile("hello.txt", " i m fine", function (err) {
 
 // fs copyFIle
 
-// fs.copyFile("hello.txt", "./Day-02/copy.txt", function (err) {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     ("file copied to desitination");
-//   }
-// });
+fs.copyFile("hello.txt", "./Day-02/copy.txt", function (err) {
+  if (err) {
+    console.log(err);
+  } else {
+    ("file copied to desitination");
+  }
+});
 
 // HTTP module ==> is a protocle for sending and recieving data through out the internet.
 
