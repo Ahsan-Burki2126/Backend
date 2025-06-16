@@ -40,7 +40,7 @@ app.listen(3000, () => {
 ///? Dynamic Routing
 //! sab se pehly browser par jao.
 //!waha wo url likho jo tmhain chahiye
-//!waha error aayega ab usky bad inde.js me akr wo url app.get me banaao
+//!waha error aayega ab usky bad index.js me akr wo url app.get me banaao
 //!ab wo chalny lagyga
 //! ab usky bad ye dekho k konsa part dynamic hai to us part k pehly route me : lga do
 //?eg app.get("/home/profile/:username") ==> now note that usename is now a variable
