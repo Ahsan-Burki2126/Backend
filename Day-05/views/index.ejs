@@ -5,35 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
-<title>EJS | Notes App</title>
+    <title>Notes Keeping </title>
 </head>
 
-<body>
-    <div class="main w-full min-h-screen bg-zinc-900">
-        <div class="form p-10 text-white">
-            <form action="/create" method="post">
-                <input class="block px-5 py-2 bg-zinc-800 mt-2 w-full" type="text" placeholder="title" name="title">
-                <textarea class="block px-5 py-2 bg-zinc-800 resize-none mt-2 w-full" name="details" id=""
-                    placeholder="task details"></textarea>
-                <input type="submit" name="" id="" value="create task" class="mt-2 bg-blue-600 px-4 py-2">
-            </form>
-        </div>
-        <div class="tasks p-10 flex gap-4 flex-wrap">
-            <% if (files.length>0) { %>
-                <%files.forEach((value)=>{ %>
-                    <div class="task  w-72 px-3 py-4 bg-zinc-800">
-                        <h1 class="text-white tracking-tighter text-3xl">
-                            <%=value%>
-                        </h1>
-                        <a href='/file/<%= value  %>' class="inline-block text-blue-500 mt-3">read more</a>
+<body class="bg-zinc-800">
+    <h1 class="text-center text-3xl font-bold text-[#d0d0d0] pt-10">Your Notes</h1>
+    <form action="/create" method="post"
+        class="container flex flex-col justify-start gap-4 min-h-52 items-center m-auto mt-12 p-10 w-full  bg-zinc-700">
+        <input type="text" name="title" placeholder="your title goes here..."
+            class="outline-none border border-zinc-600 text-white px-3 py-2 w-full rounded-lg">
+        <textarea name="details" id="details" placeholder="your notes here..."
+            class="outline-none border border-zinc-600 text-white px-3 py-2 w-full rounded-lg resize-none"></textarea>
+        <input type="submit" value="Add Notes"
+            class="px-4 py-2 bg-blue-600 text-white self-start cursor-pointer rounded-lg">
+    </form>
+
+    <% if (files.length>0) { %>
+        <div class="tasks flex flex-wrap gap-4 container m-auto py-8 w-full">
+            <% files.forEach((val)=> {%>
+                <div class="task p-4 border border-zinc-200 rounded-lg min-w-48 h-auto">
+                    <h3 class="font-semibold text-2xl text-[#d0d0d0]">
+                        <%= val %>
+                    </h3>
+                    <div class="flex justify-between items-center mt-3">
+                        <a href="/file/<%= val %>" class="text-blue-500">Read More...</a>
+                        <a href="/edit/<%= val %>" class="text-zinc-600">Edit</a>
                     </div>
-                    <% })%>
-                        <% } else {%>
-                            <h3 class="text-2xl text-zinc-500">No Tasks Yet</h3>
-                            <% } %>
+                </div>
+                <% }); %>
         </div>
-    </div>
+
+        <% } else { %>
+            <h3 class="font-semibold text-xl text-red-400 container m-auto mt-6 ">No Tasks Yet</h3>
+            <% } %>
+
+
 </body>
 
 </html>
