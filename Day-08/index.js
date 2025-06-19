@@ -29,3 +29,9 @@
 //*Mongoose.connect                            database create
 //*Model.create                                creates collection
 //*CREATE                                      creates document
+
+//📌 Database → overall storage container
+//📌 Collection → like a table (e.g., Users, Orders, Products)
+//📌 Document → a single record (like one user)
+//📌 Schema → blueprint of how a document should look
+//📌 Model → a reference to interact with that schema programmatically
