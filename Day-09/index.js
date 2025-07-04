@@ -1,6 +1,6 @@
 //!mongose is a server of mongoDB that talks with the backend server.
 // !ORM (Object Relation Mapping)
-//! ODM (Object Docment Mapping)
+//! ODM (Object Document Mapping)
 const userModel = require("./usermodel");
 const express = require("express");
 
